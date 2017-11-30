@@ -35,3 +35,7 @@ Route::get('/polem', function () {
 Route::get('/input', function() {
     return view('inputData');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
