@@ -28,4 +28,9 @@ class HomeController extends Controller
 
         return view('homepage', compact('posts'));
     }
+
+    public function add_post()
+    {
+        return view('add_post');
+    }
 }

@@ -39,3 +39,6 @@ Route::get('/input', function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/add', 'HomeController@add_post')->name('add');
+
+Route::post('/add', 'PostController@store')->name('post.store');

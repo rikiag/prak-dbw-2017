@@ -5,9 +5,11 @@
         <h1>Welcome to Dashboard</h1>
     </div>
     
-    @forelse ($posts as $post)
-    	{{ $post->title }}
-    @empty
-    	{{-- empty expr --}}
-    @endforelse
+    @if (isset($posts))
+	    @forelse ($posts as $post)
+	    	{{ $post->title }}
+	    @empty
+	    	{{-- empty expr --}}
+	    @endforelse
+    @endif
 @endsection
