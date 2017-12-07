@@ -41,4 +41,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/add', 'HomeController@add_post')->name('add');
 
+Route::get('/view/{post}', 'HomeController@view')->name('post.view');
+
 Route::post('/add', 'PostController@store')->name('post.store');

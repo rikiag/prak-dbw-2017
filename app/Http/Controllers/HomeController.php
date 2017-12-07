@@ -7,24 +7,14 @@ use App\Post;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $posts = Post::all();
+        //SELECT * FROM posts
 
         return view('homepage', compact('posts'));
     }
@@ -32,5 +22,13 @@ class HomeController extends Controller
     public function add_post()
     {
         return view('add_post');
+    }
+
+    public function view($id)
+    {
+        $post = Post::where('id', $id)->first();
+        // SELECT * FROM post WHERE id = $id
+
+        return view('view', compact('post'));
     }
 }
